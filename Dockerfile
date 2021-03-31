@@ -48,11 +48,6 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-    
-RUN apt-get install -y --no-install-recommends software-properties-common
-RUN add-apt-repository ppa:paolorotolo/android-studio
-RUN apt-get install -y --no-install-recommends android-studio
-
 RUN dpkg-reconfigure locales
 
 COPY . /app
